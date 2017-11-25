@@ -84,6 +84,18 @@
 				</MakeCommands>
 			</Target>
 		</Build>
+		<Unit filename="/home/pawel/CLionProjects/List/List.cpp">
+			<Option target="List"/>
+		</Unit>
+		<Unit filename="/home/pawel/CLionProjects/List/List.h">
+			<Option target="List"/>
+		</Unit>
+		<Unit filename="/home/pawel/CLionProjects/List/Node.cpp">
+			<Option target="List"/>
+		</Unit>
+		<Unit filename="/home/pawel/CLionProjects/List/Node.h">
+			<Option target="List"/>
+		</Unit>
 		<Unit filename="/home/pawel/CLionProjects/List/main.cpp">
 			<Option target="List"/>
 		</Unit>

@@ -6,7 +6,25 @@
 
 #IncludeRegexTransform: 
 
+/home/pawel/CLionProjects/List/List.cpp
+List.h
+/home/pawel/CLionProjects/List/List.h
+
+/home/pawel/CLionProjects/List/List.h
+stddef.h
+-
+Node.h
+/home/pawel/CLionProjects/List/Node.h
+
+/home/pawel/CLionProjects/List/Node.cpp
+Node.h
+/home/pawel/CLionProjects/List/Node.h
+
+/home/pawel/CLionProjects/List/Node.h
+
 /home/pawel/CLionProjects/List/main.cpp
 iostream
 -
+Node.h
+/home/pawel/CLionProjects/List/Node.h
 
