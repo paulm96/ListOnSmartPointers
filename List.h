@@ -2,25 +2,24 @@
 // Created by pawel on 25.11.17.
 //
 
-#include <stddef.h>
-#include "Node.h"
+
 
 #ifndef LIST_LIST_H
 #define LIST_LIST_H
 
+#include "Node.h"
 
 class List {
 public:
-    Node *getHead() const;
 
-    void setHead(Node *head);
-
-    List(Node *head);
+    List();
 
     virtual ~List();
 
+    void push_back(const int &&element);
+
 private:
-    Node *head = nullptr ;
+    std::unique_ptr<Node> head;
 
 };
 

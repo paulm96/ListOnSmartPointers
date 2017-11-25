@@ -13,20 +13,12 @@ void Node::setElement(int element) {
     Node::element = element;
 }
 
-Node *Node::getNext() const {
-    return next;
-}
-
-void Node::setNext(Node *next) {
-    Node::next = next;
-}
-
-Node::Node(int element, Node *next) : element(element), next(next) {
+Node::Node(int element, std::unique_ptr<Node> next) : element(element), next(std::move(next)) {
     std::cout << "I create a Node\n";
 }
 
 Node::~Node() {
     std::cout << "I start deleting Node\n";
-    delete next;
     std::cout << "Node is deleted\n";
 }
+
