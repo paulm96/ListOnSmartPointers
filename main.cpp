@@ -12,8 +12,6 @@ int main(){
     L = new List(N);
 
     delete L;
-
-
     cout << "Hello, World!" << endl;
     cout << "Press any key to continue...";
     getchar();
