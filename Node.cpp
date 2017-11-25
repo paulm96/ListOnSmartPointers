@@ -22,11 +22,11 @@ void Node::setNext(Node *next) {
 }
 
 Node::Node(int element, Node *next) : element(element), next(next) {
-    std::cout << "I create a Node";
+    std::cout << "I create a Node\n";
 }
 
 Node::~Node() {
-    std::cout << " I start deleting Node";
+    std::cout << "I start deleting Node\n";
     delete next;
-    std::cout << "Node is deleted";
+    std::cout << "Node is deleted\n";
 }

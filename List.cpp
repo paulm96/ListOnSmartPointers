@@ -14,11 +14,11 @@ void List::setHead(Node *head) {
 }
 
 List::List(Node *head) : head(head) {
-    std::cout << "I create a List";
+    std::cout << "I create a List\n";
 }
 
 List::~List() {
-    std::cout << "I start deleting the List";
+    std::cout << "I start deleting the List\n";
     delete head;
-    std::cout << "List is deleted";
+    std::cout << "List is deleted\n";
 }
