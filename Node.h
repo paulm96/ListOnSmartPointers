@@ -16,9 +16,13 @@ public:
 
     void setNext(Node *next);
 
+    Node(int element, Node *next);
+
+    virtual ~Node();
+
 private:
     int element;
-    Node *next;
+    Node *next = nullptr;
 
 };
 

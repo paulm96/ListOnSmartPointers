@@ -15,6 +15,10 @@ public:
 
     void setHead(Node *head);
 
+    List(Node *head);
+
+    virtual ~List();
+
 private:
     Node *head = nullptr ;
 
