@@ -13,7 +13,7 @@ void List::setHead(Node *head) {
     List::head = head;
 }
 
-List::List(Node *head) : head(head) {
+List::List() : {
     std::cout << "I create a List\n";
 }
 
