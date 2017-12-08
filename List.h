@@ -18,6 +18,8 @@ public:
 
     void push_back(const int &&element);
 
+    void pop_back();
+
 private:
     std::unique_ptr<Node> head;
 

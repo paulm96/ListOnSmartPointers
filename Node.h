@@ -17,6 +17,8 @@ public:
 
     void setNext(std::unique_ptr<Node> &&next);
 
+    std::unique_ptr<Node>& getNext();
+
     Node(int element, std::unique_ptr<Node>&& next);  //constructor
 
     virtual ~Node();    //destructor

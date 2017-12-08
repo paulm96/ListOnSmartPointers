@@ -15,14 +15,17 @@ List::~List() {
 
 void List::push_back(const int &&element) {
     auto ptrNode = std::make_unique<Node>(element, nullptr); //new Node
-    //std::unique_ptr<Node> ptrNode(new Node(element, nullptr));  //the one above is better cuz it doesn't require using 'new'
     if (nullptr == head) {
         head = std::move(ptrNode);  //new Node is moved to head, from now ptrNode points to 0
         return;
-    } else {
-        ptrNode->setNext(std::move(head));
-        head = std::move(ptrNode);
     }
+    ptrNode->setNext(std::move(head));
+    head = std::move(ptrNode);
+}
 
+void List::pop_back() {
+    head = std::move(head.get()->getNext());
+    std::cout << "I popped_back the Node, now the head is ";
+    std::cout << head.get()->getElement() << std::endl;
 }
 

@@ -7,9 +7,10 @@ using std::cin;
 using std::endl;
 
 int main(){
-    std::unique_ptr<List> L(new List);
+    auto L = std::make_unique<List>();
     L->push_back(5);
     L->push_back(10);
+    L->pop_back();
 
 
     cout << "Hello, World!" << endl;
