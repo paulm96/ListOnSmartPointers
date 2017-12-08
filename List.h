@@ -22,6 +22,7 @@ public:
 
     void foreach(void (*func)(int)) const;
 
+    bool empty() const;
 private:
     std::unique_ptr<Node> head;
 

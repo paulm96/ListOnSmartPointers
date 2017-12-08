@@ -33,9 +33,17 @@ void List::foreach(void (*func)(int)) const {         //here make the universal 
     std::cout << std::endl << "Foreach:\n" ;
     auto tmp = head.get();
     while(nullptr != tmp) {
-        std::cout << (tmp->getElement()) << std::endl;
+        //std::cout << (tmp->getElement()) << std::endl;
+        func(tmp->getElement());
         tmp = tmp->getNext().get();
     }
+}
+
+bool List::empty() const {
+    if(nullptr == head) {
+        return false;
+    }
+    return true;
 }
 
 
