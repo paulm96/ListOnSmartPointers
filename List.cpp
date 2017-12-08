@@ -46,6 +46,20 @@ bool List::empty() const {
     return true;
 }
 
+List::iterator List::begin() {
+    it.setPtr(head.get());
+    return it;
+}
+
+List::iterator List::end() {
+    auto tmp = head.get();
+    while(nullptr != tmp) {
+        tmp = tmp->getNext().get();
+    }
+    it.setPtr(tmp);
+    return it;
+}
+
 
 
 
