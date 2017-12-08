@@ -15,9 +15,11 @@ public:
 
     void setElement(int element);
 
-    Node(int element, std::unique_ptr<Node> next);
+    void setNext(std::unique_ptr<Node> &&next);
 
-    virtual ~Node();
+    Node(int element, std::unique_ptr<Node>&& next);  //constructor
+
+    virtual ~Node();    //destructor
 
 private:
     int element;
