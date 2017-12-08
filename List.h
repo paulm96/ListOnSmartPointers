@@ -12,7 +12,8 @@
 class List {
 public:
     struct iterator{
-        int operator*() {
+    public:
+        const int operator*() const {
             return iterator::ptr->getElement();
         }
 
@@ -20,7 +21,7 @@ public:
             iterator::ptr = iterator::ptr->getNext().get();
         }
 
-        bool operator!=(List::iterator a){
+        bool operator!=(List::iterator a) const {
             return (a.getPtr() != iterator::ptr);
         }
 
@@ -48,7 +49,7 @@ public:
 
     void pop_back();
 
-    void foreach(void (*func)(int)) const;
+    void foreach(void (*func)(int)) const;   //foreach can be used instead of iterator, foreach is more universal and shorter to write
 
     bool empty() const;
 private:
