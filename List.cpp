@@ -29,3 +29,15 @@ void List::pop_back() {
     std::cout << head.get()->getElement() << std::endl;
 }
 
+void List::foreach(void (*func)(int)) const {         //here make the universal call for function func() operating on tmp->getElement() argument instead on ptr to void function
+    std::cout << std::endl << "Foreach:\n" ;
+    auto tmp = head.get();
+    while(nullptr != tmp) {
+        std::cout << (tmp->getElement()) << std::endl;
+        tmp = tmp->getNext().get();
+    }
+}
+
+
+
+

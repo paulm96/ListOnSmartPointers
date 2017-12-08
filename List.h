@@ -20,6 +20,8 @@ public:
 
     void pop_back();
 
+    void foreach(void (*func)(int)) const;
+
 private:
     std::unique_ptr<Node> head;
 
