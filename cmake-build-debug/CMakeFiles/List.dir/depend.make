@@ -8,6 +8,7 @@ CMakeFiles/List.dir/List.cpp.o: ../Node.h
 CMakeFiles/List.dir/Node.cpp.o: ../Node.cpp
 CMakeFiles/List.dir/Node.cpp.o: ../Node.h
 
+CMakeFiles/List.dir/main.cpp.o: ../List.cpp
 CMakeFiles/List.dir/main.cpp.o: ../List.h
 CMakeFiles/List.dir/main.cpp.o: ../Node.h
 CMakeFiles/List.dir/main.cpp.o: ../main.cpp

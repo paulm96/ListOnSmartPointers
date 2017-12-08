@@ -5,28 +5,34 @@
 #include <iostream>
 #include "Node.h"
 
-int Node::getElement() const {
+template <typename T>
+T Node<T>::getElement() const {
     return element;
 }
 
-void Node::setElement(int element) {
-    Node::element = element;
+template <typename T>
+void Node<T>::setElement(T element) {
+    Node<T>::element = element;
 }
 
-Node::Node(int element, std::unique_ptr<Node>&& next) : element(element), next(std::move(next)) {
+template <typename T>
+Node<T>::Node(T element, std::unique_ptr<Node<T>>&& next) : element(element), next(std::move(next)) {
     std::cout << "I create a Node with the element " << element << std::endl;
 }
 
-Node::~Node() {
+template <typename T>
+Node<T>::~Node() {
     std::cout << "I start deleting Node " << element << std::endl;
     std::cout << "Node is deleted\n";
 }
 
-void Node::setNext(std::unique_ptr<Node> &&next) {
-    Node::next = std::move(next);
+template <typename T>
+void Node<T>::setNext(std::unique_ptr<Node<T>> &&next) {
+    Node<T>::next = std::move(next);
 }
 
-std::unique_ptr<Node>& Node::getNext() {
+template <typename T>
+std::unique_ptr<Node<T>>& Node<T>::getNext() {
     return next;
 }
 

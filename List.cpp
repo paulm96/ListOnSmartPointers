@@ -3,18 +3,21 @@
 //
 #include <iostream>
 #include "List.h"
+//
+//template <typename T>
+//List<T>::List() : head(nullptr) {
+//    std::cout << "I create a List\n";
+//}
 
-List::List() : head(nullptr) {
-    std::cout << "I create a List\n";
-}
+//template <typename T>
+//List<T>::~List() {
+//    std::cout << "I start deleting the List\n";
+//    std::cout << "List is deleted\n";
+//}
 
-List::~List() {
-    std::cout << "I start deleting the List\n";
-    std::cout << "List is deleted\n";
-}
-
-void List::push_back(const int &&element) {
-    auto ptrNode = std::make_unique<Node>(element, nullptr); //new Node
+template <typename T>
+void List<T>::push_back(const T &&element) {
+    auto ptrNode = std::make_unique<Node<T>>(element, nullptr); //new Node
     if (nullptr == head) {
         head = std::move(ptrNode);  //new Node is moved to head, from now ptrNode points to 0
         return;
@@ -23,13 +26,15 @@ void List::push_back(const int &&element) {
     head = std::move(ptrNode);
 }
 
-void List::pop_back() {
+template <typename T>
+void List<T>::pop_back() {
     head = std::move(head.get()->getNext());
     std::cout << "I popped_back the Node, now the head is ";
     std::cout << head.get()->getElement() << std::endl;
 }
 
-void List::foreach(void (*func)(int)) const {         //here make the universal call for function func() operating on tmp->getElement() argument instead on ptr to void function
+template <typename T>
+void List<T>::foreach(void (*func)(int)) const {         //here make the universal call for function func() operating on tmp->getElement() argument instead on ptr to void function
     std::cout << std::endl << "Foreach:\n" ;        //foreach should be out-class function, it should depends on iterators
     auto tmp = head.get();                          //for_each (list.begin(), list.end(), ptr_to_fctn) //http://www.cplusplus.com/reference/algorithm/for_each/
     while(nullptr != tmp) {
@@ -39,19 +44,22 @@ void List::foreach(void (*func)(int)) const {         //here make the universal 
     }
 }
 
-bool List::empty() const {
+template <typename T>
+bool List<T>::empty() const {
     if(nullptr == head) {
         return false;
     }
     return true;
 }
 
-List::iterator List::begin() {
+template <typename T>
+typename List<T>::iterator List<T>::begin() {
     it.setPtr(head.get());
     return it;
 }
 
-List::iterator List::end() {
+template <typename T>
+typename List<T>::iterator List<T>::end() {
     auto tmp = head.get();
     while(nullptr != tmp) {
         tmp = tmp->getNext().get();
@@ -59,6 +67,7 @@ List::iterator List::end() {
     it.setPtr(tmp);
     return it;
 }
+
 
 
 

@@ -9,23 +9,24 @@
 
 #include <memory>
 
+template <typename T>
 class Node {
 public:
-    int getElement() const;
+    T getElement() const;
 
-    void setElement(int element);
+    void setElement(T element);
 
-    void setNext(std::unique_ptr<Node> &&next);
+    void setNext(std::unique_ptr<Node<T>> &&next);
 
-    std::unique_ptr<Node>& getNext();
+    std::unique_ptr<Node<T>>& getNext();
 
-    Node(int element, std::unique_ptr<Node>&& next);  //constructor
+    Node(T element, std::unique_ptr<Node<T>>&& next);  //constructor
 
     virtual ~Node();    //destructor
 
 private:
-    int element;
-    std::unique_ptr<Node> next;
+    T element;
+    std::unique_ptr<Node<T>> next;
 
 };
 

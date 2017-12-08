@@ -7,13 +7,15 @@
 #ifndef LIST_LIST_H
 #define LIST_LIST_H
 
+#include "List.cpp"
 #include "Node.h"
 
+template <typename T>
 class List {
 public:
     struct iterator{
     public:
-        const int operator*() const {
+        const T operator*() const {
             return iterator::ptr->getElement();
         }
 
@@ -21,31 +23,31 @@ public:
             iterator::ptr = iterator::ptr->getNext().get();
         }
 
-        bool operator!=(List::iterator a) const {
+        bool operator!=(List<T>::iterator a) const {
             return (a.getPtr() != iterator::ptr);
         }
 
-        Node *getPtr() const {
+        Node<T> *getPtr() const {
             return iterator::ptr;
         }
 
-        void setPtr(Node *ptr) {
+        void setPtr(Node<T> *ptr) {
             iterator::ptr = ptr;
         }
 
     private:
-        Node* ptr;
+        Node<T>* ptr;
     };
 
-    List();
+    List() : head(nullptr) {};
 
-    virtual ~List();
+    virtual ~List() {std::cout <<"I deleted the List";};
 
     iterator begin();
 
     iterator end();
 
-    void push_back(const int &&element);
+    void push_back(const T &&element);
 
     void pop_back();
 
@@ -53,8 +55,8 @@ public:
 
     bool empty() const;
 private:
-    std::unique_ptr<Node> head;
-    List::iterator it;
+    std::unique_ptr<Node<T>> head;
+    List<T>::iterator it;
 
 };
 
