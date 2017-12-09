@@ -49,7 +49,7 @@ public:
 
     void pop_back();
 
-    void foreach(void (*func)(int)) const;   //foreach can be used instead of iterator, foreach is more universal and shorter to write
+    //void foreach(void (*func)(int)) const;   //foreach can be used instead of iterator, foreach is more universal and shorter to write
 
     bool empty() const;
 private:

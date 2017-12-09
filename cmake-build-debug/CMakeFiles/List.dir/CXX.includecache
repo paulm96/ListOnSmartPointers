@@ -26,6 +26,10 @@ Node.h
 memory
 -
 
+/home/pawel/CLionProjects/List/functions.cpp
+iostream
+-
+
 /home/pawel/CLionProjects/List/main.cpp
 iostream
 -
@@ -33,4 +37,6 @@ Node.h
 /home/pawel/CLionProjects/List/Node.h
 List.h
 /home/pawel/CLionProjects/List/List.h
+functions.cpp
+/home/pawel/CLionProjects/List/functions.cpp
 
