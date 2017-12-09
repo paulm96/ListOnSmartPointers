@@ -22,11 +22,8 @@ int main(){
     L->push_back(5);
     L->push_back(10);
     L->push_back(15);
-    //L->foreach(&show);
     L->pop_back();
-    //L->foreach(&show);
     std::cout << L->empty();
-    //L->foreach(&count);
 
     std::cout << endl << "Iterator\n";
     for(List::iterator it = L->begin(); it != L->end(); ++it)

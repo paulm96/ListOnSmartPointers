@@ -29,15 +29,6 @@ void List::pop_back() {
     std::cout << head.get()->getElement() << std::endl;
 }
 
-//void List::foreach(void (*func)(int)) const {         //here make the universal call for function func() operating on tmp->getElement() argument instead on ptr to void function
-//    std::cout << std::endl << "Foreach:\n" ;        //foreach should be out-class function, it should depends on iterators
-//    auto tmp = head.get();                          //for_each (list.begin(), list.end(), ptr_to_fctn) //http://www.cplusplus.com/reference/algorithm/for_each/
-//    while(nullptr != tmp) {
-//        //std::cout << (tmp->getElement()) << std::endl;
-//        func(tmp->getElement());
-//        tmp = tmp->getNext().get();
-//    }
-//}
 
 bool List::empty() const {
     if(nullptr == head) {
