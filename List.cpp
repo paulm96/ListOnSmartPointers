@@ -37,20 +37,19 @@ bool List::empty() const {
     return true;
 }
 
+List::iterator::iterator(Node *_ptr) : ptr(_ptr) {}
+
 List::iterator List::begin() {
-    it.setPtr(head.get());
+    List::iterator it(head.get());
     return it;
 }
+
 
 List::iterator List::end() {
     auto tmp = head.get();
     while(nullptr != tmp) {
         tmp = tmp->getNext().get();
     }
-    it.setPtr(tmp);
+    List::iterator it(tmp);
     return it;
 }
-
-
-
-

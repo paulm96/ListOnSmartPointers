@@ -33,6 +33,8 @@ public:
             iterator::ptr = ptr;
         }
 
+        explicit iterator(Node *_ptr);
+
     private:
         Node* ptr;
     };
@@ -52,7 +54,7 @@ public:
     bool empty() const;
 private:
     std::unique_ptr<Node> head;
-    List::iterator it;
+
 
 };
 
