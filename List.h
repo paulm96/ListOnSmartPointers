@@ -25,17 +25,14 @@ public:
             return (a.getPtr() != iterator::ptr);
         }
 
+        explicit iterator(Node *_ptr);
+
+    private:
+
         Node *getPtr() const {
             return iterator::ptr;
         }
 
-        void setPtr(Node *ptr) {
-            iterator::ptr = ptr;
-        }
-
-        explicit iterator(Node *_ptr);
-
-    private:
         Node* ptr;
     };
 
