@@ -24,14 +24,14 @@ void List::push_back(const int &&element) {
 }
 
 void List::pop_back() {
-    head = std::move(head.get()->getNext());
+    head = std::move((*head).getNext());
     std::cout << "I popped_back the Node, now the head is ";
-    std::cout << head.get()->getElement() << std::endl;
+    std::cout << (*head).getElement() << std::endl;
 }
 
 
 bool List::empty() const {
-    if(nullptr == head) {
+    if(head) {
         return false;
     }
     return true;
@@ -46,10 +46,6 @@ List::iterator List::begin() {
 
 
 List::iterator List::end() {
-    auto tmp = head.get();
-    while(nullptr != tmp) {
-        tmp = tmp->getNext().get();
-    }
-    List::iterator it(tmp);
+    List::iterator it(nullptr);
     return it;
 }
